@@ -1,6 +1,6 @@
 describe('Dialectica test', () => {
     it('Verify that on Forks category the Description, Owner / name, Stars and Created fields are being shown in the list', () => {
-        cy.login('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', 'facebook/react')
+        cy.login('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', 'facebook/react')
         cy.get('[href="/forks"]').click()
         cy.get('tr > :nth-child(1) > span').should(($p) => {
             expect($p).to.have.text('Description')
@@ -19,7 +19,7 @@ describe('Dialectica test', () => {
 
 describe('Dialectica test', () => {
     it('Verify that on Forks category, user can filter on Public, Private and All', () => {
-        cy.login('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', 'facebook/react')
+        cy.login('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', 'facebook/react')
         let publicF,privateF,allF
         cy.get('[href="/forks"]').click()
         cy.get('.styles_title__uhysM > span').then(($span) => {
@@ -44,7 +44,7 @@ describe('Dialectica test', () => {
 
 describe('Dialectica test', () => {
     it('Verify that on Forks category, when user filters on Private there should be no items on the list', () => {
-        cy.login('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', 'facebook/react')
+        cy.login('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', 'facebook/react')
 
         cy.get('[href="/forks"]').click()
         cy.get('select').select('private')
@@ -58,7 +58,7 @@ describe('Dialectica test', () => {
 
 describe('Dialectica test', () => {
     it('The Owner/name should change for each row individually and not overwrite the whole batch of items.', () => {
-        cy.login('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', 'facebook/react')
+        cy.login('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', 'facebook/react')
 
         cy.get('[href="/forks"]').click()
         cy.get('tbody > :nth-child(1) > :nth-child(2)').then(($span) => {
